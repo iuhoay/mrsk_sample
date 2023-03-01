@@ -1,26 +1,26 @@
 service: ship
 image: iuhoay/ship
 servers:
-  - 192.168.1.211
+  - ship-app-1
 registry:
   username: iuhoay
   password:
     - MRSK_REGISTRY_PASSWORD
 
 # Inject ENV variables into containers (secrets come from .env).
-# env:
+env:
 #   clear:
 #     DB_HOST: 192.168.0.2
-#   secret:
-#     - RAILS_MASTER_KEY
+  secret:
+    - RAILS_MASTER_KEY
 
 # Call a broadcast command on deploys.
 # audit_broadcast_cmd:
 #   bin/broadcast_to_bc
 
 # Use a different ssh user than root
-# ssh:
-#   user: app
+ssh:
+  user: ubuntu
 
 # Configure builder setup.
 builder:
