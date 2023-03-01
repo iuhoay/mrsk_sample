@@ -1,8 +1,9 @@
 service: ship
-image: iuhoay/ship
+image: iuhoay/mrsk_sample
 servers:
   - ship-app-1
 registry:
+  server: ghcr.io
   username: iuhoay
   password:
     - MRSK_REGISTRY_PASSWORD
